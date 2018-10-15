@@ -1,0 +1,31 @@
+{
+  "env": {
+    "STRAVA_ACCESS_TOKEN": "xxxxx",
+    "STRAVA_CLIENT_SECRET": "xxxxx",
+    "STRAVA_CLIENT_ID": "xxxxx",
+    "STRAVA_REDIRECT_URI": "http://localhost",
+    "DROPBOX_ACCESS_TOKEN": "xxxxx"
+  },
+  "mountPoint": "/media/xxxx/",
+  "devices": [
+    {
+      "name": "Gamin 800 (1)",
+      "idvendor": 2334,
+      "serialNumber": "xxxxx",
+      "folders": [
+        "/GARMIN/Garmin/Activities",
+        "/OFM/Garmin/Activities"
+      ]
+    },
+    {
+      "name": "Gamin 800 (2)",
+      "idvendor": 2334,
+      "serialNumber": "xxxxx",
+      "folders": [
+        "/Garmin 2/Garmin/Activities",
+        "/OS MAPS/Garmin/Activities"
+      ]
+    }
+  ],
+  "dropboxPath": "~/Dropbox/Garmin Backups/"
+}

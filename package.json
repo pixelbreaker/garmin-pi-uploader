@@ -1,0 +1,30 @@
+{
+  "name": "garmin-pi-uploader",
+  "version": "0.1.0",
+  "description": "Garmin automator for Raspberry Pi to upload to Strava",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixelbreaker/garmin-pi-uploader.git"
+  },
+  "author": "Gabriel Mak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pixelbreaker/garmin-pi-uploader/issues"
+  },
+  "homepage": "https://github.com/pixelbreaker/garmin-pi-uploader#readme",
+  "dependencies": {
+    "colors": "^1.3.2",
+    "dropbox": "^4.0.12",
+    "lodash": "^4.17.11",
+    "node-fetch": "^2.2.0",
+    "opn": "^5.4.0",
+    "prompt": "^1.0.0",
+    "strava-v3": "^1.14.0",
+    "totemize": "0.0.1",
+    "usb-detection": "^4.0.0"
+  }
+}
