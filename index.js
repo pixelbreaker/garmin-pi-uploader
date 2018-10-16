@@ -9,11 +9,7 @@ const dbx = new Dropbox({ accessToken: config.env.DROPBOX_ACCESS_TOKEN, fetch: f
 const strava = require('strava-v3')
 const totemize = require('totemize')
 
-const totemConfig = {
-  adjectives: ['succulent', 'moist', 'dreary', 'squelchy', 'dusty', 'shitty', 'cacky', 'slippery', 'skiddy', 'sketchy', 'wobbly'],
-  nouns:      ['bush', 'ditch', 'track', 'glade', 'dell', 'singletrack', 'gravel'],
-  separator:  ' '
-}
+const totemConfig = require('./totem.json')
 
 _.extend(process.env, config.env);
 
@@ -55,18 +51,21 @@ scanFolders = device => {
     const activities = fs.readdirSync(path.join(config.mountPoint, folder));
     const files = _.filter(activities, fn => /^[^\.].+\.(fit|gpx|tcx)$/.test(fn))
     let fileCount = files.length
-    console.log(files)
+    if (fileCount === 0) folderCount--
+
     files.forEach(file => {
       const fullPath = path.join(currPath, file)
+      console.log(`Uploading ${fullPath}`)
       stravaUpload(fullPath, (err, stravaPayload) => {
-        if (err) console.error(err)
+        if (err) {
+          console.error(err)
+          return
+        }
 
-        // if (stravaPayload.activity_id !== null) { // Uploaded
-        console.log(stravaPayload)
         dropboxUpload(fullPath, file).then(dropboxRes => {
-          console.log(dropboxRes)
-          if (--fileCount === 0) {
-            if (--folderCount === 0) {
+          fs.unlinkSync(fullPath)
+          if (--fileCount <= 0) {
+            if (--folderCount <= 0) {
               console.log('All saved')
             }
           }
@@ -87,11 +86,10 @@ usbDetect.on('add', device => {
   if (insertedDevice) {
     waitTimer = setInterval(() => {
       if (checkFoldersMounted(insertedDevice)) {
-        console.log('all folders mounted')
         scanFolders(insertedDevice)
         clearInterval(waitTimer)
       }
     }, 500)
-    console.log(insertedDevice)
+    console.log(insertedDevice.name)
   }
 })

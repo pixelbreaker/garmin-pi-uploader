@@ -1,0 +1,38 @@
+{
+  "adjectives": [
+      "succulent",
+      "moist",
+      "dreary",
+      "squelchy",
+      "dusty",
+      "shitty",
+      "cacky",
+      "slippery",
+      "skiddy",
+      "sketchy",
+      "wobbly",
+      "terrible",
+      "questionable",
+      "dubious",
+      "slimy",
+      "gooey"
+    ],
+  "nouns": [
+      "bush",
+      "ditch",
+      "track",
+      "glade",
+      "dell",
+      "singletrack",
+      "gravel",
+      "people",
+      "drivers",
+      "pants",
+      "chamois",
+      "route",
+      "chain",
+      "saddlesores",
+      "farts"
+    ],
+  "separator":  " "
+}
