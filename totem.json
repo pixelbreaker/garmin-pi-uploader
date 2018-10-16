@@ -15,7 +15,20 @@
       "questionable",
       "dubious",
       "slimy",
-      "gooey"
+      "gooey",
+      "Calamitous",
+      "Corpulent",
+      "Garrulous",
+      "Jocular",
+      "Querulous",
+      "Redolent",
+      "Zealous",
+      "Strident",
+      "Puckish",
+      "Intransigent",
+      "Hubristic",
+      "Doddering",
+      "Rambling"
     ],
   "nouns": [
       "bush",
@@ -32,7 +45,23 @@
       "route",
       "chain",
       "saddlesores",
-      "farts"
+      "farts",
+      "badger",
+      "deer",
+      "fox",
+      "adder",
+      "brambles",
+      "nettles",
+      "pothole",
+      "drop-off",
+      "flapjacks",
+      "banana",
+      "passage",
+      "alley",
+      "bumpkins",
+      "horse riders",
+      "coffin dodgers",
+      "grockles"
     ],
   "separator":  " "
 }

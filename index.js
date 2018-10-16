@@ -7,7 +7,7 @@ const Dropbox = require('dropbox').Dropbox
 const fetch = require('node-fetch')
 const dbx = new Dropbox({ accessToken: config.env.DROPBOX_ACCESS_TOKEN, fetch: fetch })
 const strava = require('strava-v3')
-const totemize = require('totemize')
+// const totemize = require('totemize')
 
 const totemConfig = require('./totem.json')
 
@@ -37,7 +37,7 @@ stravaUpload = (file, cb) => {
   return strava.uploads.post({
     data_type: ext,
     file: file,
-    name: totemize(totemConfig)
+    name: totemize({ ...totemConfig })
     // statusCallback: (err, payload) => {
     //   if (err) console.error(err)
     // }
