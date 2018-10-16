@@ -4,8 +4,9 @@ var config = require('./config.json');
 var fs = require('fs');
 var open = require('opn');
 var prompt = require('prompt');
-_.extend(process.env, config.env);
 var strava = require('strava-v3');
+
+_.extend(process.env, config.env);
 
 console.log("Requesting code for new Access Token".bold.yellow);
 open(strava.oauth.getRequestAccessURL({scope:"write"}));
